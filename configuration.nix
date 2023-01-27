@@ -72,7 +72,10 @@
   programs.neovim.vimAlias = true;
 
   programs.neovim.configure = {
-    customRC = "set expandtab shiftwidth=2";
+    customRC = ''
+      set expandtab
+      set shiftwidth=2
+    '';
 
     packages.myVimPackage = with pkgs.vimPlugins; {
       start = [ vim-nix ];
