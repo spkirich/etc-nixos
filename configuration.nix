@@ -16,6 +16,10 @@
   # Set the EFI system partition mount point.
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  environment.systemPackages = with pkgs; [
+    xclip
+  ];
+
   environment.variables = {
     NIX_SHELL_PRESERVE_PROMPT = "1";
   };
