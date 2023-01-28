@@ -16,6 +16,10 @@
   # Set the EFI system partition mount point.
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  environment.variables = {
+    NIX_SHELL_PRESERVE_PROMPT = "1";
+  };
+
   fonts = let
     iosevka = [ "Iosevka" ];
   in {
@@ -81,6 +85,9 @@
       start = [ vim-nix ];
     };
   };
+
+  # Use OpenSSH agent.
+  programs.ssh.startAgent = true;
 
   # Use GVFS service.
   services.gvfs.enable = true;
